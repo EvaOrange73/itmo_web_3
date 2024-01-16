@@ -13,7 +13,7 @@
     <h:outputStylesheet name="styles/buttons.css"/>
 
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js" type=""></script>
-    <h:outputScript  name="scripts/clock.js" target="body"/>
+    <h:outputScript name="scripts/clock.js" target="body"/>
 </h:head>
 <h:body>
     <div class="mid">
@@ -28,7 +28,9 @@
             <div id="clock"></div>
         </div>
         <div class="container">
-            <h:commandButton action="task-page" value="Перейти к заданию" styleClass="button"/>
+            <h:form>
+                <h:commandButton action="task-page" value="Перейти к заданию" styleClass="button"/>
+            </h:form>
         </div>
     </div>
 </h:body>

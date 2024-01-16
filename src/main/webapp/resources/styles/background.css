@@ -23,3 +23,13 @@ body{
     margin: 10px;
     height: 100%;
 }
+
+.container-big {
+    display: flex;
+    min-width: 600px;
+    margin-bottom: 40px;
+}
+
+.container-small{
+    width: 50%;
+}

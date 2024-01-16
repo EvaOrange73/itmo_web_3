@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+    <title>Лабораторная №3</title>
+    <h:outputStylesheet name="styles/background.css"/>
+    <h:outputStylesheet name="styles/buttons.css"/>
+    <h:outputStylesheet name="styles/table.css"/>
+
+</h:head>
+<h:body>
+    <div id="background">
+        <div class="mid">
+            <div class="container">
+                <h:form>
+                    <h:commandButton action="start-page" value="Вернуться на главную" styleClass="button"/>
+                </h:form>
+            </div>
+            <div class="container-big">
+                <div class="container-small">
+                    <div class="container">
+                        <p>Определить, попадает ли точка в заданную область:</p>
+                        <div id="task-container">.</div>
+                    </div>
+                </div>
+                <div class="container-small">
+                    <div class="container">
+                        <div id="form">
+                            <label class="input">X =
+                                <input id="x" type="text" name="x" maxlength="10"></input>
+                                <span id="xError"></span>
+                            </label>
+                            <label class="input">Y =
+                                <input id="y" type="text" name="y" maxlength="10"></input>
+                                <span id="yError"></span>
+                            </label>
+                            <label class="input">R =
+                                <input type="button" name="r" value="1" onclick="setR(this)"></input>
+                                <input type="button" name="r" value="2" onclick="setR(this)"></input>
+                                <input type="button" name="r" value="3" onclick="setR(this)"></input>
+                                <input type="button" name="r" value="4" onclick="setR(this)"></input>
+                                <input type="button" name="r" value="5" onclick="setR(this)"></input>
+                                <span id="rError"></span>
+                            </label>
+                            <input type="submit" value="Отправить" onclick="submit()"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <table id="table">
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Результат</th>
+                        <th>Время отправки запроса</th>
+                        <th>Время работы скрипта</th>
+                    </tr>
+                    <!--                <c:forEach items="${points}" var="point">-->
+                    <!--                    <tr>-->
+                    <!--                        <td><c:out value="${point.x}" /></td>-->
+                    <!--                        <td><c:out value="${point.y}" /></td>-->
+                    <!--                        <td><c:out value="${point.r}" /></td>-->
+                    <!--                        <td class="${point.result ? 'green': 'red'}">-->
+                    <!--                            <c:out value="${point.result ? 'Точка попадает в область': 'Точка не попадает в область'}" />-->
+                    <!--                        </td>-->
+                    <!--                        <td><c:out value="${point.requestTime}" /></td>-->
+                    <!--                        <td><c:out value="${point.processTime}" /></td>-->
+                    <!--                    </tr>-->
+                    <!--                </c:forEach>-->
+                </table>
+            </div>
+        </div>
+    </div>
+
+</h:body>
+</html>
