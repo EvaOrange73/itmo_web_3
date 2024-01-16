@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="Initial commit">
+    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="task page">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/example/itmo_web_3/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/clock.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/clock.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/taskPicture.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/start-page.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/start-page.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/background.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/background.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +56,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -68,13 +68,16 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2b03fABbVBW6bldFHHxUnIkitMj" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Gradle.itmo_web_3 [buildDependents].executor": "Run",
     "Gradle.itmo_web_3 [build].executor": "Run",
     "Gradle.itmo_web_3 [clean].executor": "Run",
@@ -82,16 +85,19 @@
     "Gradle.itmo_web_3 [war].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/eva/IdeaProjects/jsf-template",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.externalResources",
+    "settings.editor.selected.configurable": "Settings.JavaScript.Linters.JSHint",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -232,7 +238,7 @@
       <workItem from="1705342988866" duration="19000" />
       <workItem from="1705343225176" duration="5000" />
       <workItem from="1705343455838" duration="566000" />
-      <workItem from="1705344033315" duration="19213000" />
+      <workItem from="1705344033315" duration="24883000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -242,15 +248,44 @@
       <option name="project" value="LOCAL" />
       <updated>1705427847407</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="clock">
+      <option name="closed" value="true" />
+      <created>1705436938108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705436938108</updated>
+    </task>
+    <task id="LOCAL-00003" summary="task page">
+      <option name="closed" value="true" />
+      <created>1705446099181</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705446099181</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="clock" />
+    <MESSAGE value="task page" />
+    <option name="LAST_COMMIT_MESSAGE" value="task page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
