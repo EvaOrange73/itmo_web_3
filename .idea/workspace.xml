@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="task page">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/itmo_web_3/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/scripts/taskPicture.js" afterDir="false" />
+    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="task picture">
+      <change afterPath="$PROJECT_DIR$/src/main/java/SliderView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/styles/background.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/styles/background.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +57,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,14 +78,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Build itmo_web_3.executor": "Run",
     "Gradle.itmo_web_3 [buildDependents].executor": "Run",
     "Gradle.itmo_web_3 [build].executor": "Run",
     "Gradle.itmo_web_3 [clean].executor": "Run",
     "Gradle.itmo_web_3 [dependencies].executor": "Run",
     "Gradle.itmo_web_3 [war].executor": "Run",
+    "JBoss/WildFly Server.run.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/eva/IdeaProjects/jsf-template",
@@ -106,7 +107,7 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.itmo_web_3 [war]">
+  <component name="RunManager" selected="JBoss/WildFly Server.run">
     <configuration name="itmo_web_3 [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -200,7 +201,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -217,6 +218,85 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="run" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 31.0.0.Beta1" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : web : itmo_web_3.war (exploded)">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="35847" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : web : itmo_web_3.war (exploded)" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.itmo_web_3 [build]" />
+      <item itemvalue="Gradle.itmo_web_3 [buildDependents]" />
+      <item itemvalue="Gradle.itmo_web_3 [clean]" />
+      <item itemvalue="Gradle.itmo_web_3 [dependencies]" />
+      <item itemvalue="Gradle.itmo_web_3 [war]" />
+      <item itemvalue="JBoss/WildFly Server.run" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.itmo_web_3 [war]" />
@@ -238,7 +318,8 @@
       <workItem from="1705342988866" duration="19000" />
       <workItem from="1705343225176" duration="5000" />
       <workItem from="1705343455838" duration="566000" />
-      <workItem from="1705344033315" duration="24883000" />
+      <workItem from="1705344033315" duration="25285000" />
+      <workItem from="1705514352442" duration="2222000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -264,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705446099181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="task picture">
+      <option name="closed" value="true" />
+      <created>1705447671028</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705447671028</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +374,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="clock" />
     <MESSAGE value="task page" />
-    <option name="LAST_COMMIT_MESSAGE" value="task page" />
+    <MESSAGE value="task picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="task picture" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

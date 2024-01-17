@@ -15,4 +15,5 @@ ext {
 
 dependencies {
   compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
+  implementation('org.primefaces:primefaces:13.0.0:jakarta')
 }
