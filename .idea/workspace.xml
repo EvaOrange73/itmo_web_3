@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="task picture">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/PointValidator.java" afterDir="false" />
+    <list default="true" id="b4fa6dda-1659-431b-9a7d-a89ac23288b6" name="Changes" comment="task picture: change radius and click">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PointsList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/utils/createTable.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/utils/fillTable.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/task-page.xhtml" afterDir="false" />
     </list>
@@ -78,36 +82,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Gradle.Build itmo_web_3.executor": "Run",
-    "Gradle.itmo_web_3 [buildDependents].executor": "Run",
-    "Gradle.itmo_web_3 [build].executor": "Run",
-    "Gradle.itmo_web_3 [clean].executor": "Run",
-    "Gradle.itmo_web_3 [dependencies].executor": "Run",
-    "Gradle.itmo_web_3 [war].executor": "Run",
-    "JBoss/WildFly Server.run.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/eva/IdeaProjects/jsf-template",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Settings.JavaScript.Linters.JSHint",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Build itmo_web_3.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itmo_web_3 [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itmo_web_3 [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itmo_web_3 [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itmo_web_3 [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.itmo_web_3 [war].executor&quot;: &quot;Run&quot;,
+    &quot;JBoss/WildFly Server.run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/eva/IdeaProjects/itmo_web_3/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.JavaScript.Linters.JSHint&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources" />
     </key>
   </component>
@@ -303,11 +316,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.itmo_web_3 [dependencies]" />
         <item itemvalue="Gradle.itmo_web_3 [war]" />
+        <item itemvalue="Gradle.itmo_web_3 [clean]" />
         <item itemvalue="Gradle.itmo_web_3 [buildDependents]" />
         <item itemvalue="Gradle.itmo_web_3 [build]" />
-        <item itemvalue="Gradle.itmo_web_3 [clean]" />
-        <item itemvalue="Gradle.itmo_web_3 [dependencies]" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +337,8 @@
       <workItem from="1705343455838" duration="566000" />
       <workItem from="1705344033315" duration="25285000" />
       <workItem from="1705514352442" duration="2222000" />
-      <workItem from="1705532901567" duration="4712000" />
+      <workItem from="1705532901567" duration="10434000" />
+      <workItem from="1705543876515" duration="3026000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -358,7 +372,31 @@
       <option name="project" value="LOCAL" />
       <updated>1705447671028</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="validation">
+      <option name="closed" value="true" />
+      <created>1705538242246</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705538242246</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".idea">
+      <option name="closed" value="true" />
+      <created>1705538272577</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705538272577</updated>
+    </task>
+    <task id="LOCAL-00007" summary="task picture: change radius and click">
+      <option name="closed" value="true" />
+      <created>1705541200870</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705541200870</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +418,10 @@
     <MESSAGE value="clock" />
     <MESSAGE value="task page" />
     <MESSAGE value="task picture" />
-    <option name="LAST_COMMIT_MESSAGE" value="task picture" />
+    <MESSAGE value="validation" />
+    <MESSAGE value=".idea" />
+    <MESSAGE value="task picture: change radius and click" />
+    <option name="LAST_COMMIT_MESSAGE" value="task picture: change radius and click" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

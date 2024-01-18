@@ -13,6 +13,8 @@ public class Point {
     private Date requestTime;
     private long processTime;
 
+    public Point(){}
+
     public float getX() {
         return x;
     }

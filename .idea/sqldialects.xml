@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/436465c1-d4df-44d4-8a64-cdf1f3f1f76a/console.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/PointsList.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/utils/createTable.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/utils/fillTable.sql" dialect="PostgreSQL" />
+  </component>
+</project>

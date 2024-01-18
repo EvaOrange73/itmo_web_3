@@ -69,17 +69,34 @@
                 </div>
             </div>
             <div class="container">
-                <table id="table">
-                    <tr>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>R</th>
-                        <th>Результат</th>
-                        <th>Время отправки запроса</th>
-                        <th>Время работы скрипта</th>
-                    </tr>
+                <h:dataTable value="#{pointsList.getPoints()}" var="p">
 
-                </table>
+                    <h:column><f:facet name="header">X</f:facet>
+                        <h:outputText value="#{p.x}"/>
+                    </h:column>
+
+                    <h:column><f:facet name="header">Y</f:facet>
+                        <h:outputText value="#{p.y}"/>
+                    </h:column>
+
+                    <h:column><f:facet name="header">R</f:facet>
+                        <h:outputText value="#{p.r}"/>
+                    </h:column>
+
+                    <h:column><f:facet name="header">Результат</f:facet>
+                        <h:outputText styleClass="#{p.result ? 'green' : 'red'}"
+                                      value="#{p.result ? 'Точка попадает в область': 'Точка не попадает в область'}"/>
+                    </h:column>
+
+                    <h:column><f:facet name="header">Время отправки запроса</f:facet>
+                        <h:outputText value="#{p.requestTime}"/>
+                    </h:column>
+
+                    <h:column><f:facet name="header">Время работы скрипта</f:facet>
+                        <h:outputText value="#{p.processTime}"/>
+                    </h:column>
+
+                </h:dataTable>
             </div>
         </div>
     </div>
