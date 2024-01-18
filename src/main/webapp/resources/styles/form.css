@@ -7,3 +7,7 @@
 .slider{
     width: 200px;
 }
+
+.errorMessage{
+    color: red;
+}
