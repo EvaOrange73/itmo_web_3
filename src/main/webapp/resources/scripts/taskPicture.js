@@ -2,6 +2,7 @@ let draw = SVG().addTo('#task-container').size(300, 300);
 
 function svg(r) {
     "use strict";
+    draw.clear();
     draw.rect(300, 300).attr({fill: 'white'});
     drawFigure(draw, r);
     drawAxes(draw);
@@ -44,4 +45,22 @@ function drawFigure(draw, r) {
     draw.rect(r * 30, r * 30).dx(150).dy(150 - r * 30).fill('#3399ff');
 }
 
-svg(5);
+svg(3);
+
+document.getElementById("form:r").addEventListener("input", e => {
+    "use strict";
+    let r = Number(e.target.value);
+    if (!Number.isNaN(r)) {
+        svg(r);
+    }
+});
+
+document.getElementById("task-container").addEventListener("click", e => {
+    "use strict";
+    let rect = document.getElementById("task-container").getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+    point(x, y);
+    document.getElementById("form:x").value = (x / 30 - 5).toFixed(2);
+    document.getElementById("form:y").value = (5 - y / 30).toFixed(2);
+});

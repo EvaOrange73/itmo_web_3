@@ -8,7 +8,7 @@ import java.util.Date;
 public class Point {
     private float x;
     private float y;
-    private float r;
+    private float r = 3;
     private boolean result;
     private Date requestTime;
     private long processTime;
