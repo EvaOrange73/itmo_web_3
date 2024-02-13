@@ -21,7 +21,6 @@ public class PointValidator implements Validator, Serializable {
             throws ValidatorException {
         float min = Float.parseFloat((String) uic.getAttributes().get("min"));
         float max = Float.parseFloat((String) uic.getAttributes().get("max"));
-        System.out.println(min);
 
         float value = (float) obj;
 
