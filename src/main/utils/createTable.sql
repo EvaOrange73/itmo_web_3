@@ -5,6 +5,6 @@ create table points
     y float,
     r float,
     result boolean,
-    requestTime timestamp,
+    requestTime bigint,
     processTime bigint
 );

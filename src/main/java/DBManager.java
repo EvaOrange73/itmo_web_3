@@ -5,11 +5,11 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 
@@ -48,7 +48,8 @@ public class DBManager implements Serializable {
             preparedStatement.setDouble(2, point.getY());
             preparedStatement.setDouble(3, point.getR());
             preparedStatement.setBoolean(4, point.isResult());
-            preparedStatement.setDate(5, (java.sql.Date) point.getRequestTime());
+            preparedStatement.setLong(5, point.getRequestTime().getTime());
+            point.setProcessTime(new Date().getTime() - point.getRequestTime().getTime());
             preparedStatement.setLong(6, point.getProcessTime());
 
             preparedStatement.execute();
@@ -70,8 +71,8 @@ public class DBManager implements Serializable {
                 point.setY(resultSet.getFloat("y"));
                 point.setR(resultSet.getFloat("r"));
                 point.setResult(resultSet.getBoolean("result"));
-                point.setRequestTime(resultSet.getTimestamp("requestTime"));
-                point.setProcessTime(resultSet.getInt("processTime"));
+                point.setRequestTime(resultSet.getLong("requestTime"));
+                point.setProcessTime(resultSet.getLong("processTime"));
                 points.add(point);
             }
 

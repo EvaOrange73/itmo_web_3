@@ -14,7 +14,7 @@ public class Point {
     private float y;
     private float r = 3;
     private boolean result;
-    private Date requestTime;
+    private long requestTime = new Date().getTime();
     private long processTime;
 
     public Point(){}
@@ -36,7 +36,7 @@ public class Point {
     }
 
     public Date getRequestTime() {
-        return requestTime;
+        return new Date(requestTime);
     }
 
     public long getProcessTime() {
@@ -59,7 +59,7 @@ public class Point {
         this.result = result;
     }
 
-    public void setRequestTime(Date requestTime) {
+    public void setRequestTime(long requestTime) {
         this.requestTime = requestTime;
     }
 
