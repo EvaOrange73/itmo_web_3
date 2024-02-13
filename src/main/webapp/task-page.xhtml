@@ -16,6 +16,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js" type=""></script>
     <h:outputScript name="scripts/taskPicture.js" target="body"/>
+    <h:outputScript target="body">
+        drawPoints('#{pointsList.getPointsJson()}');
+    </h:outputScript>
 </h:head>
 <h:body>
     <div id="background">
@@ -63,7 +66,8 @@
                                 </h:inputText>
                                 <h:message for="r" styleClass="errorMessage"/>
                             </div>
-                            <h:commandButton value="Отправить" validateClient="true" action="#{buttonProcessor.processSubmitButton()}"/>
+                            <h:commandButton value="Отправить" validateClient="true"
+                                             action="#{buttonProcessor.processSubmitButton()}"/>
                         </h:form>
                     </div>
                 </div>
@@ -100,6 +104,5 @@
             </div>
         </div>
     </div>
-
 </h:body>
 </html>

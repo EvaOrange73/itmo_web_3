@@ -8,9 +8,9 @@ function svg(r) {
     drawAxes(draw);
 }
 
-function point(x, y) {
+function point(x, y, color) {
     "use strict";
-    draw.circle(3).dx(x - 1).dy(y - 1);
+    draw.circle(3).dx(x - 1).dy(y - 1).fill(color);
 }
 
 function drawAxes() {
@@ -60,7 +60,16 @@ document.getElementById("task-container").addEventListener("click", e => {
     let rect = document.getElementById("task-container").getBoundingClientRect();
     let x = e.clientX - rect.left;
     let y = e.clientY - rect.top;
-    point(x, y);
+    point(x, y, "black");
     document.getElementById("form:x").value = (x / 30 - 5).toFixed(2);
     document.getElementById("form:y").value = (5 - y / 30).toFixed(2);
 });
+
+function drawPoints(pointsList) {
+    "use strict";
+    pointsList = JSON.parse(pointsList);
+    for (let p of pointsList) {
+        point((p.x + 5) * 30, (5 - p.y) * 30, p.result ? "green" : "red");
+    }
+}
+

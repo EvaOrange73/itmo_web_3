@@ -1,3 +1,4 @@
+import com.google.gson.Gson;
 import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
@@ -15,6 +16,9 @@ public class PointsList implements Serializable {
 
     public List<Point> getPoints() {
         return dbManager.getPoints();
+    }
+    public String getPointsJson() {
+        return new Gson().toJson(dbManager.getPoints());
     }
 }
 
