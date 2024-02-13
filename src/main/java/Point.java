@@ -1,7 +1,11 @@
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
 import java.util.Date;
+import java.util.Properties;
 
 @Named
 @RequestScoped
@@ -61,5 +65,34 @@ public class Point {
 
     public void setProcessTime(long processTime) {
         this.processTime = processTime;
+    }
+
+    public void addPoint(){
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        try {
+            Properties properties = new Properties();
+            FileInputStream file = new FileInputStream("/home/eva/IdeaProjects/itmo_web_3/src/main/java/db.cfg");
+            properties.load(file);
+            try {
+                Connection connection = DriverManager.getConnection(url, properties);
+                PreparedStatement preparedStatement = connection.prepareStatement(
+                        "INSERT INTO points(x, y, r, result, requesttime, processtime) " +
+                                "VALUES (?, ?, ?, ?, ?, ?);"
+                );
+                preparedStatement.setDouble(1, this.x);
+                preparedStatement.setDouble(2, this.y);
+                preparedStatement.setDouble(3, this.r);
+                preparedStatement.setBoolean(4, this.result);
+                preparedStatement.setDate(5, (java.sql.Date) this.requestTime);
+                preparedStatement.setLong(6, this.processTime);
+
+                preparedStatement.execute();
+
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
