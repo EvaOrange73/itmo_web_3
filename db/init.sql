@@ -1,4 +1,3 @@
-drop table points;
 create table points
 (
     x float,

@@ -17,4 +17,5 @@ dependencies {
   compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
   implementation('org.primefaces:primefaces:13.0.0:jakarta')
   implementation('org.postgresql:postgresql:42.6.0')
+  implementation 'com.google.code.gson:gson:2.7'
 }

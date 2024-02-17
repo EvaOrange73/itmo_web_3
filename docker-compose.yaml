@@ -1,0 +1,17 @@
+services:
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=eva
+      - POSTGRES_PASSWORD=31415
+      - POSTGRES_DB=lab3_docker
+    ports:
+      - "5433:5432"
+  wildfly:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

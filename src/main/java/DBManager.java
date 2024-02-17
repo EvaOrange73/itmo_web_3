@@ -1,11 +1,10 @@
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;
@@ -23,11 +22,12 @@ public class DBManager implements Serializable {
 
     @PostConstruct
     public void init() {
-        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String url = "jdbc:postgresql://db:5432/lab3_docker";
+//        String url = "jdbc:postgresql://localhost:5432/lab3";
         try {
+            InputStream inputStream  = DBManager.class.getClassLoader().getResourceAsStream("/db.cfg");
             Properties properties = new Properties();
-            FileInputStream file = new FileInputStream("/home/eva/IdeaProjects/itmo_web_3/src/main/java/db.cfg");
-            properties.load(file);
+            properties.load(inputStream);
             try {
                 this.connection = DriverManager.getConnection(url, properties);
             } catch (SQLException e) {
