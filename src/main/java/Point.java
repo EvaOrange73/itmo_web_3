@@ -1,11 +1,7 @@
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.sql.*;
 import java.util.Date;
-import java.util.Properties;
 
 @Named
 @RequestScoped

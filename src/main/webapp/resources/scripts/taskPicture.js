@@ -1,16 +1,21 @@
 let draw = SVG().addTo('#task-container').size(300, 300);
+let rememberPoints;
 
-function svg(r) {
+function drawPicture(radius, pointsList){
     "use strict";
+    rememberPoints = pointsList;
     draw.clear();
     draw.rect(300, 300).attr({fill: 'white'});
-    drawFigure(draw, r);
+    drawFigure(draw, radius);
     drawAxes(draw);
+    drawPoints(radius, rememberPoints);
 }
 
-function point(x, y, color) {
+function drawFigure(draw, r) {
     "use strict";
-    draw.circle(3).dx(x - 1).dy(y - 1).fill(color);
+    draw.polygon((150 - r / 2 * 30) + ',150 150,150 150,' + (150 + r * 30)).fill('#3399ff');
+    draw.path('M150,150 L' + (150 - r * 30) + ',150 A' + (r * 30) + ',' + (r * 30) + ' 0 0,1 150,' + (150 - r * 30) + ' Z').fill('#3399ff');
+    draw.rect(r * 30, r * 30).dx(150).dy(150 - r * 30).fill('#3399ff');
 }
 
 function drawAxes() {
@@ -38,20 +43,26 @@ function drawAxes() {
     }
 }
 
-function drawFigure(draw, r) {
+function drawPoints(radius, pointsList) {
     "use strict";
-    draw.polygon((150 - r / 2 * 30) + ',150 150,150 150,' + (150 + r * 30)).fill('#3399ff');
-    draw.path('M150,150 L' + (150 - r * 30) + ',150 A' + (r * 30) + ',' + (r * 30) + ' 0 0,1 150,' + (150 - r * 30) + ' Z').fill('#3399ff');
-    draw.rect(r * 30, r * 30).dx(150).dy(150 - r * 30).fill('#3399ff');
+    pointsList = JSON.parse(pointsList);
+    for (let p of pointsList) {
+        if(p.r === radius) {
+            point((p.x + 5) * 30, (5 - p.y) * 30, p.result ? "green" : "red");
+        }
+    }
 }
 
-svg(3);
+function point(x, y, color) {
+    "use strict";
+    draw.circle(3).dx(x - 1).dy(y - 1).fill(color);
+}
 
 document.getElementById("form:r").addEventListener("input", e => {
     "use strict";
     let r = Number(e.target.value);
     if (!Number.isNaN(r)) {
-        svg(r);
+        drawPicture(r, rememberPoints);
     }
 });
 
@@ -64,12 +75,3 @@ document.getElementById("task-container").addEventListener("click", e => {
     document.getElementById("form:x").value = (x / 30 - 5).toFixed(2);
     document.getElementById("form:y").value = (5 - y / 30).toFixed(2);
 });
-
-function drawPoints(pointsList) {
-    "use strict";
-    pointsList = JSON.parse(pointsList);
-    for (let p of pointsList) {
-        point((p.x + 5) * 30, (5 - p.y) * 30, p.result ? "green" : "red");
-    }
-}
-
