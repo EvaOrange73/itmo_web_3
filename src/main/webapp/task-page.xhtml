@@ -41,6 +41,7 @@
                             <div>
                                 <h:outputLabel for="x">X:</h:outputLabel>
                                 <h:inputText id="x" styleClass="input" value="#{point.x}" required="true"
+                                             converterMessage="Введите число"
                                              validatorMessage="Введите число от -5 до 5">
                                     <f:validateDoubleRange minimum="-5" maximum="5"/>
                                 </h:inputText>
@@ -49,6 +50,7 @@
                             <div>
                                 <h:outputLabel for="y">Y:</h:outputLabel>
                                 <h:inputText id="y" styleClass="input" value="#{point.y}" required="true"
+                                             converterMessage="Введите число"
                                              validatorMessage="Введите число от -2 до 2">
                                     <f:validateDoubleRange minimum="-2" maximum="2"/>
 
@@ -59,6 +61,7 @@
                             <div>
                                 <h:outputLabel for="r">R:</h:outputLabel>
                                 <h:inputText id="r" styleClass="input" value="#{point.r}" required="true"
+                                             converterMessage="Введите число"
                                              validatorMessage="Введите число от 2 до 5">
                                     <f:validateDoubleRange minimum="2" maximum="5"/>
 
