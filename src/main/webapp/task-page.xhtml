@@ -40,29 +40,28 @@
                         <h:form id="form">
                             <div>
                                 <h:outputLabel for="x">X:</h:outputLabel>
-                                <h:inputText id="x" styleClass="input" value="#{point.x}" required="true">
-                                    <f:validator validatorId="pointValidator" for="x"/>
-                                    <f:attribute name="min" value="-5"/>
-                                    <f:attribute name="max" value="5"/>
+                                <h:inputText id="x" styleClass="input" value="#{point.x}" required="true"
+                                             validatorMessage="Введите число от -5 до 5">
+                                    <f:validateDoubleRange minimum="-5" maximum="5"/>
                                 </h:inputText>
                                 <h:message for="x" styleClass="errorMessage"/>
                             </div>
                             <div>
                                 <h:outputLabel for="y">Y:</h:outputLabel>
-                                <h:inputText id="y" styleClass="input" value="#{point.y}" required="true">
-                                    <f:validator validatorId="pointValidator" for="y"/>
-                                    <f:attribute name="min" value="-2"/>
-                                    <f:attribute name="max" value="2"/>
+                                <h:inputText id="y" styleClass="input" value="#{point.y}" required="true"
+                                             validatorMessage="Введите число от -2 до 2">
+                                    <f:validateDoubleRange minimum="-2" maximum="2"/>
+
                                 </h:inputText>
                                 <h:message for="y" styleClass="errorMessage"/>
                                 <p:slider for="y" styleClass="slider" minValue="-2" maxValue="2" step="0.5"/>
                             </div>
                             <div>
                                 <h:outputLabel for="r">R:</h:outputLabel>
-                                <h:inputText id="r" styleClass="input" value="#{point.r}" required="true">
-                                    <f:validator validatorId="pointValidator" for="r"/>
-                                    <f:attribute name="min" value="2"/>
-                                    <f:attribute name="max" value="5"/>
+                                <h:inputText id="r" styleClass="input" value="#{point.r}" required="true"
+                                             validatorMessage="Введите число от 2 до 5">
+                                    <f:validateDoubleRange minimum="2" maximum="5"/>
+
                                 </h:inputText>
                                 <h:message for="r" styleClass="errorMessage"/>
                             </div>
