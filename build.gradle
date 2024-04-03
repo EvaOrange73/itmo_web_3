@@ -1,6 +1,7 @@
 plugins {
   id 'java'
   id 'war'
+  id 'org.hidetake.ssh' version '2.10.0'
 }
 
 group 'web'
@@ -18,4 +19,24 @@ dependencies {
   implementation('org.primefaces:primefaces:13.0.0:jakarta')
   implementation('org.postgresql:postgresql:42.6.0')
   implementation 'com.google.code.gson:gson:2.7'
+}
+
+remotes {
+  webServer {
+    host = 'helios.cs.ifmo.ru'
+    port = 2222
+    user = project.property("lab3ScpUsername")
+    password = project.property("lab3ScpPassword")
+  }
+}
+
+task scp(dependsOn: build) {
+  doLast {
+    var warFile = buildDir.toString() + "/libs/itmo_web_3.war"
+    ssh.run {
+      session(remotes.webServer) {
+        put from: warFile, into: './itmo_web_3.war'
+      }
+    }
+  }
 }
