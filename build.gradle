@@ -58,16 +58,23 @@ def gitStash() {
 }
 
 def gitStashPop() {
-    exec {
-        commandLine 'git', 'stash', 'pop'
+    try {
+        exec {
+            commandLine 'git', 'stash', 'pop'
+        }
+    } catch (e) {
     }
 }
 
 String gitDiff() {
     def stdout = new ByteArrayOutputStream()
-    exec {
-        commandLine 'git', 'diff', 'stash', 'HEAD'
-        standardOutput = stdout
+    try {
+        exec {
+            commandLine 'git', 'diff', 'stash', 'HEAD'
+            standardOutput = stdout
+        }
+    } catch (e) {
+        return "с последней рабочей версии не было изменений"
     }
     return stdout.toString().trim()
 }
