@@ -31,8 +31,8 @@ tasks.named('test', Test) {
 
 remotes {
   webServer {
-    host = 'helios.cs.ifmo.ru'
-    port = 2222
+    host = project.property("heliosHost")
+    port = project.property("heliosPort") as Integer
     user = project.property("lab3ScpUsername")
     password = project.property("lab3ScpPassword")
   }
@@ -43,7 +43,7 @@ task scp(dependsOn: build) {
     var warFile = buildDir.toString() + "/libs/itmo_web_3.war"
     ssh.run {
       session(remotes.webServer) {
-        put from: warFile, into: './itmo_web_3.war'
+        put from: warFile, into: project.property("scpTarget")
       }
     }
   }
