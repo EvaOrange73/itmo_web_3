@@ -40,3 +40,70 @@ task scp(dependsOn: build) {
     }
   }
 }
+
+tasks.register('history') {
+    gitStash()
+    findWorkingVersion()
+    new File("diff.txt").withWriter('utf-8') { writer ->
+        writer.writeLine gitDiff()
+    }
+    gitCheckoutMaster()
+    gitStashPop()
+}
+
+def gitStash() {
+    exec {
+        commandLine 'git', 'stash'
+    }
+}
+
+def gitStashPop() {
+    exec {
+        commandLine 'git', 'stash', 'pop'
+    }
+}
+
+String gitDiff() {
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'diff', 'stash', 'HEAD'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+def gitCheckoutPrevious() {
+    exec {
+        commandLine 'git', 'checkout', 'HEAD^'
+    }
+
+}
+
+def gitCheckoutMaster() {
+    exec {
+        commandLine 'git', 'checkout', 'master'
+    }
+}
+
+def findWorkingVersion() {
+    while (!is_compile()) {
+        try {
+            gitCheckoutPrevious()
+        } catch (e) {
+            println 'не найдено ни одной рабочей версии'
+            return
+        }
+    }
+}
+
+def is_compile() {
+    try {
+        exec {
+            commandLine './gradlew', 'compileJava'
+        }
+    } catch (e) {
+        println e.message
+        return false
+    }
+    return true
+}
