@@ -68,8 +68,13 @@
                                 </h:inputText>
                                 <h:message for="r" styleClass="errorMessage"/>
                             </div>
-                            <h:commandButton value="Отправить" validateClient="true"
-                                             action="#{buttonProcessor.processSubmitButton()}"/>
+                            <div>
+                                <h:commandButton id="button" value="Отправить" validateClient="true"
+                                                 action="#{buttonProcessor.processSubmitButton()}"/>
+                                <br/>
+                                <h:outputLabel for="button" styleClass="errorMessage"
+                                               value="#{buttonProcessor.errorMessage}"/>
+                            </div>
                         </h:form>
                     </div>
                 </div>

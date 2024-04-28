@@ -22,8 +22,8 @@ public class DBManager implements Serializable {
 
     @PostConstruct
     public void init() {
-        String url = "jdbc:postgresql://db:5432/lab3_docker";
-//        String url = "jdbc:postgresql://localhost:5432/lab3";
+//        String url = "jdbc:postgresql://db:5432/lab3_docker";
+        String url = "jdbc:postgresql://localhost:5432/lab3";
         try {
             InputStream inputStream  = DBManager.class.getClassLoader().getResourceAsStream("/db.cfg");
             Properties properties = new Properties();

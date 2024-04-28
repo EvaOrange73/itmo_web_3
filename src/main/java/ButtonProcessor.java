@@ -9,8 +9,23 @@ public class ButtonProcessor {
     AreaChecker areaChecker;
     @Inject
     DBManager dbManager;
-    public void processSubmitButton(){
+
+    String errorMessage;
+
+    @Inject
+    PointsCounter pointsCounter;
+
+    @Inject
+    PercentageCounter percentageCounter;
+
+    public void processSubmitButton() {
         areaChecker.checkArea();
         dbManager.insertPoint();
+        this.errorMessage = pointsCounter.countPoint();
+        percentageCounter.countPercentage();
+    }
+
+    public String getErrorMessage() {
+        return this.errorMessage;
     }
 }
