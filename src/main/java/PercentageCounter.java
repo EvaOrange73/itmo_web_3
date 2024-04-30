@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Named
 @SessionScoped
 public class PercentageCounter implements Serializable, PercentageCounterMBean {
-    private String percentage;
+    private int percentage;
 
     @Inject
     PointsCounter pointsCounter;
@@ -19,6 +19,7 @@ public class PercentageCounter implements Serializable, PercentageCounterMBean {
 
     @PostConstruct
     public void init() {
+        System.out.println("This thing is registered");
         mBeanManager.addBean("percentageCounter", this);
     }
 
@@ -29,11 +30,11 @@ public class PercentageCounter implements Serializable, PercentageCounterMBean {
 
     @Override
     public void countPercentage() {
-        this.percentage = (pointsCounter.getSuccessfulPoints() * 100 / pointsCounter.getAllPoints()) + "%";
+        this.percentage = (pointsCounter.getSuccessfulPoints() * 100 / pointsCounter.getAllPoints());
     }
 
     @Override
-    public String getPercentage() {
+    public int getPercentage() {
         return percentage;
     }
 }

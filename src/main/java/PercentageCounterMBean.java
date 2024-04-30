@@ -1,4 +1,4 @@
 public interface PercentageCounterMBean {
     public void countPercentage();
-    public String getPercentage();
+    public int getPercentage();
 }

@@ -42,3 +42,4 @@ bin/
 .DS_Store
 
 src/main/java/db.cfg
+src/main/resources/db.cfg
