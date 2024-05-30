@@ -1,22 +1,24 @@
 plugins {
-  id 'java'
-  id 'war'
-  id 'org.hidetake.ssh' version '2.10.0'
+    id 'java'
+    id 'war'
+    id 'org.hidetake.ssh' version '2.10.0'
 }
 
 group 'web'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
-  implementation('org.primefaces:primefaces:13.0.0:jakarta')
-  implementation('org.postgresql:postgresql:42.6.0')
-  implementation 'com.google.code.gson:gson:2.7'
-  testImplementation "org.junit.jupiter:junit-jupiter:5.7.1"
-  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    compileOnly('jakarta.platform:jakarta.jakartaee-web-api:9.1.0')
+    implementation('org.primefaces:primefaces:13.0.0:jakarta')
+    implementation('org.postgresql:postgresql:42.6.0')
+    implementation 'com.google.code.gson:gson:2.7'
+    testImplementation "org.junit.jupiter:junit-jupiter:5.7.1"
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation(files("libs/stopwatch-0.4-with-deps.jar"))
+    implementation(files("libs/JMeasurement-0.80.199.jar"))
 }
 
 tasks.named('test', Test) {
@@ -30,23 +32,23 @@ tasks.named('test', Test) {
 }
 
 remotes {
-  webServer {
-    host = project.property("heliosHost")
-    port = project.property("heliosPort") as Integer
-    user = project.property("lab3ScpUsername")
-    password = project.property("lab3ScpPassword")
-  }
+    webServer {
+        host = project.property("heliosHost")
+        port = project.property("heliosPort") as Integer
+        user = project.property("lab3ScpUsername")
+        password = project.property("lab3ScpPassword")
+    }
 }
 
 task scp(dependsOn: build) {
-  doLast {
-    var warFile = buildDir.toString() + "/libs/itmo_web_3.war"
-    ssh.run {
-      session(remotes.webServer) {
-        put from: warFile, into: project.property("scpTarget")
-      }
+    doLast {
+        var warFile = buildDir.toString() + "/libs/itmo_web_3.war"
+        ssh.run {
+            session(remotes.webServer) {
+                put from: warFile, into: project.property("scpTarget")
+            }
+        }
     }
-  }
 }
 
 tasks.register('history') {
